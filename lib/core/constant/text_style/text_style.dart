@@ -89,8 +89,9 @@ const style16B = TextStyle(
   color: Colors.black,
   fontWeight: FontWeight.bold,
 );
-const style14B = TextStyle(
-  fontSize: 14,
+const style26B = TextStyle(
+  fontSize: 26,
+  fontFamily: 'Monsemibold',
   color: Colors.white,
   fontWeight: FontWeight.bold,
 );

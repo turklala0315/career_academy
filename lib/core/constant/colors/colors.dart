@@ -1,9 +1,10 @@
 import 'dart:ui';
 
-const mainorange = Color(0xffff7a01);
-const lightgrey = Color(0xffc0c0c0);
-const mediumgrey = Color(0xff8b8b8b);
-const darkgrey = Color(0xff4e4e4e);
-const blue = Color(0xff125cff);
-const green = Color(0xff39ad4a);
-const yellow = Color(0xffffb743);
+const white = Color(0xfffFFFFF);
+const mainblue = Color(0xfC00A2BC);
+const halforang = Color(0xffF66962);
+const black = Color(0xff000000);
+const purple = Color(0xff392B7D);
+const mediumgray = Color(0xff787878);
+const lightpink = Color(0xffFEC4C0);
+const ligtgray = Color(0xffB0ABCC);
