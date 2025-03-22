@@ -1,3 +1,4 @@
+import 'package:career_academy/core/constant/colors/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -26,7 +27,8 @@ const style10r = TextStyle(
 );
 const style14 = TextStyle(
   fontSize: 14,
-  color: Colors.black,
+  fontFamily: 'josefregular',
+  color: mediumgray,
   fontWeight: FontWeight.w300,
 );
 const style17 = TextStyle(
@@ -41,7 +43,8 @@ const style22 = TextStyle(
 );
 const style16 = TextStyle(
   fontSize: 16,
-  color: Colors.white,
+  color: mainblue,
+  fontFamily: 'josefsemibold',
   fontWeight: FontWeight.w700,
 );
 
@@ -79,18 +82,19 @@ const style12 = TextStyle(fontSize: 12, color: Colors.black);
 
 ///**********************************    Bold             ********************************************************************** */
 
-const style24B = TextStyle(
-  fontSize: 30,
+const style22B = TextStyle(
+  fontSize: 22,
+  fontFamily: 'josefbold',
   color: Colors.black,
   fontWeight: FontWeight.bold,
 );
 const style16B = TextStyle(
   fontSize: 16,
-  color: Colors.black,
+  color: Colors.white,
   fontWeight: FontWeight.bold,
 );
-const style26B = TextStyle(
-  fontSize: 26,
+const style23B = TextStyle(
+  fontSize: 23,
   fontFamily: 'Monsemibold',
   color: Colors.white,
   fontWeight: FontWeight.bold,

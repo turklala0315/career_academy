@@ -1,4 +1,4 @@
-import 'package:career_academy/core/constant/auth/auth_screen/login/loging.dart';
+import 'package:career_academy/core/constant/auth/auth_screen/login/login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -16,11 +16,12 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
-        home: Loging(),
+        home: Login(),
       ),
     );
   }

@@ -78,6 +78,16 @@ flutter:
     - family: Monsemibold
       fonts:
         - asset: assets/fonts/Montserrat_SemiBold.ttf
+    - family: josefbold
+      fonts:
+        - asset: assets/fonts/JosefinSans-Bold.ttf
+    - family: josefregular
+      fonts:
+        - asset: assets/fonts/JosefinSans-Regular.ttf
+    - family: josefsemibold
+      fonts:
+        - asset: assets/fonts/JosefinSans-SemiBold.ttf
+        
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
