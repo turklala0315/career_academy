@@ -38,7 +38,7 @@ class _LoginState extends State<Login> {
     if (value == null || value.isEmpty) {
       return "Enter your password";
     }
-    if (value.length < 6) {
+    if (value.length < 8) {
       return "Password must be at least 6 characters";
     }
     return null;
@@ -58,24 +58,26 @@ class _LoginState extends State<Login> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 70),
+        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 70),
         child: SingleChildScrollView(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Welcome back! \nDiscover your Direction', style: style22B),
+              Text('Welcome back!\nDiscover your Direction', style: style22B),
               SizedBox(height: 35.h),
               Form(
                 key: formkey,
                 child: Column(
                   children: [
                     TextFormField(
+                      maxLines: 1,
                       controller: email,
-                      decoration: const InputDecoration(
+                      decoration: InputDecoration(
                         fillColor: textformdolor,
                         filled: true,
                         hintText: 'Enter your email',
                         hintStyle: style14,
-                        border: OutlineInputBorder(
+                        border: const OutlineInputBorder(
                           borderSide: BorderSide.none,
                           borderRadius: BorderRadius.all(Radius.circular(10)),
                         ),
@@ -86,6 +88,7 @@ class _LoginState extends State<Login> {
 
                     // Password Field with Validation
                     TextFormField(
+                      maxLines: 1,
                       controller: password,
                       obscureText: _obscureText,
                       decoration: InputDecoration(

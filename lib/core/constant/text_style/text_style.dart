@@ -25,8 +25,8 @@ const style10r = TextStyle(
   color: Colors.black,
   fontFamily: 'regular',
 );
-const style14 = TextStyle(
-  fontSize: 14,
+TextStyle style14 = TextStyle(
+  fontSize: 14.sp,
   fontFamily: 'josefregular',
   color: mediumgray,
   fontWeight: FontWeight.w300,
@@ -41,10 +41,16 @@ const style22 = TextStyle(
   color: Colors.white,
   fontWeight: FontWeight.w700,
 );
-const style16 = TextStyle(
-  fontSize: 16,
+TextStyle style16 = TextStyle(
+  fontSize: 16.sp,
   color: mainblue,
   fontFamily: 'josefsemibold',
+  fontWeight: FontWeight.w700,
+);
+TextStyle style14regular = TextStyle(
+  fontSize: 14.sp,
+  color: Color(0xff0F0F0F),
+  fontFamily: 'josefregular',
   fontWeight: FontWeight.w700,
 );
 
@@ -88,20 +94,20 @@ const style22B = TextStyle(
   color: Colors.black,
   fontWeight: FontWeight.bold,
 );
-const style16B = TextStyle(
-  fontSize: 16,
+TextStyle style16B = TextStyle(
+  fontSize: 16.sp,
   color: Colors.white,
   fontWeight: FontWeight.bold,
 );
-const style23B = TextStyle(
-  fontSize: 23,
+TextStyle style23B = TextStyle(
+  fontSize: 23.sp,
   fontFamily: 'Monsemibold',
   color: Colors.white,
   fontWeight: FontWeight.bold,
 );
-TextStyle style14Brown = TextStyle(
-  fontSize: 12.sp,
-  color: const Color(0xff96979B),
+TextStyle style20B = TextStyle(
+  fontSize: 20.sp,
+  color: black,
   fontWeight: FontWeight.bold,
 );
 const style12b = TextStyle(
