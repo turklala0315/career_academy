@@ -12,84 +12,84 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
+  final formkey = GlobalKey<FormState>();
+  final TextEditingController firstname = TextEditingController();
+  final TextEditingController lastname = TextEditingController();
+  final TextEditingController email = TextEditingController();
+  final TextEditingController createpassword = TextEditingController();
+  final TextEditingController confirmpassword = TextEditingController();
+  final TextEditingController whichschool = TextEditingController();
+  final TextEditingController whichgrade = TextEditingController();
+  bool _obscureText = true;
+  var selected = 2;
+
+  String? validateFirstname(String? value) {
+    if (value == null || value.isEmpty) {
+      return "Enter your email";
+    }
+
+    String pattern = r'abcdefghijklmnopqrstuvwxyz';
+    RegExp regex = RegExp(pattern);
+    if (!regex.hasMatch(value)) {
+      return "Enter a valid email address";
+    }
+    return null;
+  }
+
+  String? validateLastname(String? value) {
+    if (value == null || value.isEmpty) {
+      return "Enter your email";
+    }
+
+    String pattern = r'abcdefghijklmnopqrstuvwxyz';
+    RegExp regex = RegExp(pattern);
+    if (!regex.hasMatch(value)) {
+      return "Enter a valid email address";
+    }
+    return null;
+  }
+
+  String? validateEmail(String? value) {
+    if (value == null || value.isEmpty) {
+      return "Enter your email";
+    }
+
+    String pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$';
+    RegExp regex = RegExp(pattern);
+    if (!regex.hasMatch(value)) {
+      return "Enter a valid email address";
+    }
+    return null;
+  }
+
+  String? validateCreatepassword(String? value) {
+    if (value == null || value.isEmpty) {
+      return "Enter your password";
+    }
+    if (value.length < 8) {
+      return "Password must be at least 6 characters";
+    }
+    return null;
+  }
+
+  String? validateConfirmpassword(String? value) {
+    if (value == null || value.isEmpty) {
+      return "Enter your password";
+    }
+    if (value.length < 8) {
+      return "Password must be at least 6 characters";
+    }
+    return null;
+  }
+
   @override
   Widget build(BuildContext context) {
-    final formkey = GlobalKey<FormState>();
-    final TextEditingController firstname = TextEditingController();
-    final TextEditingController lastname = TextEditingController();
-    final TextEditingController email = TextEditingController();
-    final TextEditingController createpassword = TextEditingController();
-    final TextEditingController confirmpassword = TextEditingController();
-    final TextEditingController whichschool = TextEditingController();
-    final TextEditingController whichgrade = TextEditingController();
-    bool _obscureText = true;
-    int? _value = 1;
-
-    String? validateFirstname(String? value) {
-      if (value == null || value.isEmpty) {
-        return "Enter your email";
-      }
-
-      String pattern = r'abcdefghijklmnopqrstuvwxyz';
-      RegExp regex = RegExp(pattern);
-      if (!regex.hasMatch(value)) {
-        return "Enter a valid email address";
-      }
-      return null;
-    }
-
-    String? validateLastname(String? value) {
-      if (value == null || value.isEmpty) {
-        return "Enter your email";
-      }
-
-      String pattern = r'abcdefghijklmnopqrstuvwxyz';
-      RegExp regex = RegExp(pattern);
-      if (!regex.hasMatch(value)) {
-        return "Enter a valid email address";
-      }
-      return null;
-    }
-
-    String? validateEmail(String? value) {
-      if (value == null || value.isEmpty) {
-        return "Enter your email";
-      }
-
-      String pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$';
-      RegExp regex = RegExp(pattern);
-      if (!regex.hasMatch(value)) {
-        return "Enter a valid email address";
-      }
-      return null;
-    }
-
-    String? validateCreatepassword(String? value) {
-      if (value == null || value.isEmpty) {
-        return "Enter your password";
-      }
-      if (value.length < 8) {
-        return "Password must be at least 6 characters";
-      }
-      return null;
-    }
-
-    String? validateConfirmpassword(String? value) {
-      if (value == null || value.isEmpty) {
-        return "Enter your password";
-      }
-      if (value.length < 8) {
-        return "Password must be at least 6 characters";
-      }
-      return null;
-    }
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: mainblue,
         title: Row(
           children: [
-            Image.asset('$staticAssets/logo.png', scale: 4.5),
+            Image.asset('$staticAssets/logo.png', scale: 5.8),
             SizedBox(width: 10.w),
             Text('Career Academy', style: style23B),
           ],
@@ -108,6 +108,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 child: Column(
                   children: [
                     TextFormField(
+                      cursorColor: mainblue,
+                      keyboardType: TextInputType.text,
                       maxLines: 1,
                       controller: firstname,
                       decoration: InputDecoration(
@@ -124,6 +126,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ),
                     SizedBox(height: 15.h),
                     TextFormField(
+                      cursorColor: mainblue,
+                      keyboardType: TextInputType.text,
                       maxLines: 1,
                       controller: lastname,
                       decoration: InputDecoration(
@@ -140,6 +144,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ),
                     SizedBox(height: 15.h),
                     TextFormField(
+                      cursorColor: mainblue,
+                      keyboardType: TextInputType.emailAddress,
                       maxLines: 1,
                       controller: email,
                       decoration: InputDecoration(
@@ -158,6 +164,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
                     // Password Field with Validation
                     TextFormField(
+                      cursorColor: mainblue,
+                      keyboardType: TextInputType.text,
                       maxLines: 1,
                       controller: createpassword,
                       obscureText: _obscureText,
@@ -189,6 +197,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
                     SizedBox(height: 15.h),
                     TextFormField(
+                      cursorColor: mainblue,
+                      keyboardType: TextInputType.text,
                       maxLines: 1,
                       controller: confirmpassword,
                       obscureText: _obscureText,
@@ -226,30 +236,67 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 style: style14regular,
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+
                 children: [
                   Radio(
                     activeColor: mainblue,
                     value: 0,
-                    groupValue: _value,
-                    onChanged: (value) {
+                    groupValue: selected,
+                    onChanged: (val) {
                       setState(() {
-                        value = _value;
+                        selected = val!;
                       });
                     },
                   ),
                   Text('Yes'),
-                  SizedBox(width: 10.w),
+                  SizedBox(width: 30.w),
                   Radio(
+                    activeColor: mainblue,
                     value: 1,
-                    groupValue: _value,
-                    onChanged: (value) {
+                    groupValue: selected,
+                    onChanged: (val) {
                       setState(() {
-                        value = _value;
+                        selected = val!;
+                        print('hello abd');
                       });
                     },
                   ),
                   Text('No'),
                 ],
+              ),
+              TextFormField(
+                cursorColor: mainblue,
+                keyboardType: TextInputType.text,
+                maxLines: 1,
+                controller: whichschool,
+                decoration: InputDecoration(
+                  fillColor: textformdolor,
+                  filled: true,
+                  hintText: 'Which School',
+                  hintStyle: style14,
+                  border: const OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                  ),
+                ),
+              ),
+              SizedBox(height: 15.h),
+              TextFormField(
+                cursorColor: mainblue,
+                keyboardType: TextInputType.text,
+                maxLines: 1,
+                controller: whichgrade,
+                decoration: InputDecoration(
+                  fillColor: textformdolor,
+                  filled: true,
+                  hintText: 'Which Grade',
+                  hintStyle: style14,
+                  border: const OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                  ),
+                ),
               ),
             ],
           ),

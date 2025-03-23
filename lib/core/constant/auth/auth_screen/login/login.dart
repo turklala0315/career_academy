@@ -51,7 +51,7 @@ class _LoginState extends State<Login> {
         backgroundColor: mainblue,
         title: Row(
           children: [
-            Image.asset('$staticAssets/logo.png', scale: 4.5),
+            Image.asset('$staticAssets/logo.png', scale: 5.8),
             SizedBox(width: 10.w),
             Text('Career Academy', style: style23B),
           ],
@@ -70,6 +70,8 @@ class _LoginState extends State<Login> {
                 child: Column(
                   children: [
                     TextFormField(
+                      keyboardType: TextInputType.emailAddress,
+                      cursorColor: mainblue,
                       maxLines: 1,
                       controller: email,
                       decoration: InputDecoration(
@@ -88,6 +90,8 @@ class _LoginState extends State<Login> {
 
                     // Password Field with Validation
                     TextFormField(
+                      cursorColor: mainblue,
+                      keyboardType: TextInputType.text,
                       maxLines: 1,
                       controller: password,
                       obscureText: _obscureText,
