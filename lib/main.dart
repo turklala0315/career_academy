@@ -1,5 +1,4 @@
 import 'package:career_academy/core/constant/auth/auth_screen/login/login.dart';
-import 'package:career_academy/core/constant/auth/auth_screen/register_screen/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

@@ -20,6 +20,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final TextEditingController confirmpassword = TextEditingController();
   final TextEditingController whichschool = TextEditingController();
   final TextEditingController whichgrade = TextEditingController();
+  final TextEditingController city = TextEditingController();
+  final TextEditingController province = TextEditingController();
+  final TextEditingController country = TextEditingController();
+
   bool _obscureText = true;
   var selected = 2;
 
@@ -81,6 +85,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
     }
     return null;
   }
+
+  var Cities = [
+    'lohore',
+    'karachi',
+    'sargodha',
+    'attock',
+    'sialkot',
+    'gujranwala',
+    'peshawar',
+    'charsadda',
+  ];
+  var Myselectedcites = [0];
 
   @override
   Widget build(BuildContext context) {
@@ -258,7 +274,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     onChanged: (val) {
                       setState(() {
                         selected = val!;
-                        print('hello abd');
                       });
                     },
                   ),
@@ -291,6 +306,40 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   fillColor: textformdolor,
                   filled: true,
                   hintText: 'Which Grade',
+                  hintStyle: style14,
+                  border: const OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                  ),
+                ),
+              ),
+              SizedBox(height: 15.h),
+              TextFormField(
+                expands: false,
+                cursorColor: mainblue,
+                keyboardType: TextInputType.text,
+                maxLines: 1,
+                controller: city,
+                decoration: InputDecoration(
+                  suffix: IconButton(
+                    onPressed: () {
+                      DropdownButton(
+                        items:
+                            Cities.map(
+                              (e) => DropdownMenuItem(value: e, child: Text(e)),
+                            ).toList(),
+                        onChanged: (val) {},
+                      );
+                    },
+                    icon: Icon(
+                      Icons.keyboard_arrow_down_rounded,
+                      size: 1,
+                      color: Colors.black,
+                    ),
+                  ),
+                  fillColor: textformdolor,
+                  filled: true,
+                  hintText: 'City',
                   hintStyle: style14,
                   border: const OutlineInputBorder(
                     borderSide: BorderSide.none,
