@@ -4,6 +4,7 @@ import 'package:career_academy/core/constant/strings/string.dart';
 import 'package:career_academy/core/constant/text_style/text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:http/http.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -16,7 +17,6 @@ class _LoginState extends State<Login> {
   final formkey = GlobalKey<FormState>();
 
   final TextEditingController email = TextEditingController();
-
   final TextEditingController password = TextEditingController();
 
   bool _obscureText = true;
@@ -38,10 +38,27 @@ class _LoginState extends State<Login> {
     if (value == null || value.isEmpty) {
       return "Enter your password";
     }
-    if (value.length < 8) {
-      return "Password must be at least 6 characters";
-    }
+    // if (value.length < 8) {
+    //   return "Password must be at least 6 characters";
+    // }
     return null;
+  }
+
+  void login(String UserEmail, UserPassword) async {
+    print('i am login');
+    try {
+      Response response = await post(
+        Uri.parse('http://158.69.21.66:85/api/Account/LoginUser'),
+        body: {'UserEmail': UserEmail, 'UserPassword': UserPassword},
+      );
+      if (response.statusCode == 200) {
+        print('account successfully created ${response.body}');
+      } else {
+        print('faild');
+      }
+    } catch (e) {
+      print(e.toString());
+    }
   }
 
   @override
@@ -143,6 +160,7 @@ class _LoginState extends State<Login> {
                   if (formkey.currentState!.validate()) {
                     // Proceed with login if validation passes
                     print("Email: ${email.text}, Password: ${password.text}");
+                    login(email.text, password.text);
                   }
                 },
                 child: Container(
